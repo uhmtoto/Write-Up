@@ -24,6 +24,19 @@ if($q[0]=="admin") {
 } 12
 ```
 
+## Challenge 21
+`BLIND SQL INJECTION` 문제라고 페이지에서 알려주고 있다. no에 1과 2를 넣었을 때만 `True`라고 뜨는 것을 보아 2개의 계정만 Injection하면 될 것 같다.
+간단하게 파이썬으로 프로그램 짜서 풀었다.
+
+### payload
+[https://github.com/uhmtoto/Exploit-Code/blob/master/webkr_21.py](https://github.com/uhmtoto/Exploit-Code/blob/master/webkr_21.py)
+### result
+```
+no1 id : guest
+no1 pw : guest
+no2 id : admin
+no2 pw : blindsqlinjectionkk
+```
 
 ## Challenge 23
 `Your mission is to inject <script>alert(1);</script>`이라고 한다.
