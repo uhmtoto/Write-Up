@@ -47,6 +47,6 @@ $_GET['p']가 `author`이면 `safflower`을 출력하고, `flag`면 `$flag`를 �
 우선 맨 처음에 `urldecode`를 하기 때문에 `?%23=??&p=flag`이 `?#=??&p=flag`가 된후, `parse_url`를 하는데 `parse_url`에서는 fragment(#)뒤로는 무시를 하기 때문이다. 따라서 최종적으로 `$url_query`에는 #뒤가 무시되어 저장된다. 그래서 문자열 필터링은 우회하면서 `$_GET['p']`는 `flag`가 되게 된다.
 
 ### SQR
-`QR`코드에 SQLi 페이로드를 넣으면 될 것 같았는데, 결국 아직도 못 풀었다.
+QR코드에 SQLi 페이로드를 넣으면 될 것 같았는데, 결국 아직도 못 풀었다.
 
 (계속)
