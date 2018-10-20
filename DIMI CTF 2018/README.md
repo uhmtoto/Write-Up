@@ -78,3 +78,36 @@ FLAG: Congratulation! The flag is dimi{Yeah, you are good at math!:)}
 [*] Closed connection to 121.170.91.11 port 9999
 ```
 FLAG: `dimi{Yeah, you are good at math!:)}`
+
+## web
+### DimiStorage
+문제 링크에 들어가면
+![img](img/1.png)
+이런 화면이 나와서 요소 검사를 해보니
+![img](img/2.png)
+adminpage.php가 보인다. 들어가 보자
+![img](img/3.png)
+이렇게 사람들이 업로드한 파일들이 보인다<br>
+여기까지 보고, 이제 주어진 소스코드를 보자
+![img](img/4.png)
+입력한 password가 맞지 않으면서 `$_SERVER[’HTTP_HOST’]`가 `127.0.0.1`이 아니라면 실패하고, 아닌건 모두 다운로드 된다.
+하드코딩된 password를 알아내는건 거의 불가능 하므로 우리는 `$_SERVER[’HTTP_HOST’]`를 조작해보자
+`$_SERVER[’HTTP_HOST’]`는 프록시 툴로 간편하게 조작이 가능하다.
+![img](img/5.png)
+위에 있는 사진은 FLAG 다운로드 버튼을 누른후 request header에서 HOST 값을 `127.0.0.1`로 바꾼 상태 이다
+이렇게 조작하고 forward를 누르면 `FLAG`가 다운로드 된다
+![img](img/6.png)
+FLAG: `dimi{iamlocalhost}`
+
+## reversing
+### waiting
+처음 실행하면 `Not NOW!!` 라고 뜬다.
+이걸로 시간이랑 뭔가 연관이 있는 프로그램이라는 것을 알아냈다<br>
+이 프로그램을 DotPeek으로 디컴파일 해보니 오늘의 날짜가 20보다 크다면 소켓으로 무언갈 가져와 출력해주는 것 같다
+20보다 크지 않다면 아까처럼 `Not NOW!!`를 출력한다<br>
+![img](img/7.png)
+그래서 나는 윈도우의 날짜를 21일로 바꿨다
+![img](img/8.png)
+이제 플래그가 나왔다
+![img](img/9.png)
+flag: `dimi{the_time_is_running_out}`
