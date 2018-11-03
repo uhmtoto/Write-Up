@@ -3,7 +3,7 @@
 ![scoreboard](scoreboard.png)
 ![bingoboard](bingoboard.png)
 
-#풀이
+# 풀이
 대회 사이트와 문제가 영재원 내부에서만 접속되서 자세한 내용은 없다.
 
 ## Law, General
