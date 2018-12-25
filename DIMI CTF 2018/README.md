@@ -105,9 +105,9 @@ FLAG: `dimi{iamlocalhost}`
 이걸로 시간이랑 뭔가 연관이 있는 프로그램이라는 것을 알아냈다<br>
 이 프로그램을 DotPeek으로 디컴파일 해보니 오늘의 날짜가 20보다 크다면 소켓으로 무언갈 가져와 출력해주는 것 같다
 20보다 크지 않다면 아까처럼 `Not NOW!!`를 출력한다<br>
-![img](img/7.png)
+![img](img/7.png)<br>
 그래서 나는 윈도우의 날짜를 21일로 바꿨다
-![img](img/8.png)
+![img](img/8.png)<br>
 이제 플래그가 나왔다
 ![img](img/9.png)<br>
 flag: `dimi{the_time_is_running_out}`
