@@ -109,5 +109,5 @@ FLAG: `dimi{iamlocalhost}`
 그래서 나는 윈도우의 날짜를 21일로 바꿨다
 ![img](img/8.png)
 이제 플래그가 나왔다
-![img](img/9.png)
+![img](img/9.png)<br>
 flag: `dimi{the_time_is_running_out}`
